@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+                
+ <bean id="employee" class="com.Employee" >
+ <property name="id" value="5"></property>
+ <property name="name" value="nazar"></property>
+ <property name="address" ref="address"></property>
+ </bean>
+ 
+ <bean id="address" class="com.Address">
+ <property name="line" value="gasd"></property>
+ <property name="city" value="city"></property>
+ <property name="state" value="state"></property>
+ <property name="country" value="country"></property>
+ </bean>
+ 
+ 
+ 
+ <bean id="question" class="com.Question">
+ <property name="id" value="1"></property>
+ <property name="name" value="this is answers"></property>
+ <property name="answers">
+ <list>
+<ref bean="answer1"/>
+<ref bean="answer2"/>
+ </list>
+</property>
+<property name="maps">
+<map>
+<entry key="java is a programming language"  value="nazar"> </entry>
+<entry key="java is a ghanta language"  value="fam"></entry>
+
+</map>
+
+</property>
+ </bean>
+ 
+ 
+ <bean id="answer1" class="com.Answer">
+ <property name="id" value="10"></property>
+ <property name="name" value="this is answers from answer"></property>
+ <property name="by" value="nazar"></property>
+	</bean>
+ 
+ <bean id="answer2" class="com.Answer">
+ <property name="id" value="100"></property>
+ <property name="name" value="this is answers from answer2"></property>
+ <property name="by" value="nazarmubeen"></property>
+	</bean>
+ 
+ 
+ 
+ </beans>  
